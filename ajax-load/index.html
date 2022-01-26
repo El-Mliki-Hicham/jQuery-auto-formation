@@ -7,27 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="div"></div>
-    <label> Entre votre name</label>
-    <input type="text" id="input">
-<button id="get">click</button>
+
+
+    <!-- ajax , fichier json -->
+    <button id="btn">click pour afficher </button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-<script>
+
+    <script>
 
 jQuery(document).ready(function(){
 
-    jQuery("#get").click(function(){
+    jQuery("#btn").click(function(){
 
-       alert(jQuery("#input").val())
-
+        jQuery("body").load("ex.json")
     })
 })
 
-
-
     </script>
+
 </body>
 </html>

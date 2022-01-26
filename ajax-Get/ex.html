@@ -7,26 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="div"></div>
-    <label> Entre votre name</label>
-    <input type="text" id="input">
-<button id="get">click</button>
 
+    <p id="P"></p>
+<button id="btn">click pour afficher </button>      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-<script>
-
+    <script>
 jQuery(document).ready(function(){
 
-    jQuery("#get").click(function(){
+jQuery("#btn").click(function(){
 
-       alert(jQuery("#input").val())
-
-    })
+jQuery.get("https://api.openweathermap.org/data/2.5/weather?q=tanger&appid=0bd0cd1e7d8ab7a578a5a4d28a57d45b&units=metric",
+function(data){
+    console.log(data)
+   
+    jQuery("#P").append(data.name)
 })
 
-
+})
+})
 
     </script>
 </body>
