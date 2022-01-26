@@ -7,28 +7,42 @@
     <title>Document</title>
 </head>
 <body>
-<p id="p1">hello Word</p>
-<p id="p2">Good morning</p>
-<p id="p3">Good night</p>
 
-<button id="btn">click for set</button>
-
+    <button id="btn">click pour ajoute</button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
+    <script>
+
 jQuery(document).ready(function(){
 
-    jQuery("#btn").click(function(){
+jQuery('#btn').click(function(){
 
-    jQuery("#p2").text("hello")
+    // creat element in html methode 1
+    var text = '<p>hello word</p>'
 
-    })
+
+        // creat element in html methode 2
+    var Text2 = document.createElement("p")
+
+    Text2.innerHTML=("hello")
+
+
+    // afficher
+jQuery("body").append(Text2,text)
+
 })
 
 
-</script>
+})
 
 
+
+
+
+
+
+    </script>
+    
 </body>
 </html>
