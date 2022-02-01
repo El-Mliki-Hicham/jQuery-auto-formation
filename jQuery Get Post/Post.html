@@ -1,27 +1,42 @@
 <!DOCTYPE html>
+            
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    
-    $.post('test_post.php',  // url
-      // data to be submit
-      name,
-       function(data, status,xhr ) {   // success callback function
-                alert('status: ' + status + ', data: ' + data);
-            },); // response data format
+    <meta name="viewport" content="width=device-width" />
+	<script type="text/javascript" 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+			
+		 $('#ajaxBtn').click(function(){
+			
+      
+
+      $.post('/jquery/submitData',      // url
+      
+      
+
+			   { myData: 'This is my data.' } ,           // data to be submit
 
 
+
+			   function(data, status) {             // success callback
+
+
+						$('p').append('status: ' + status  + "<br>"+ ' data: ' + data);
+
+
+				});
+			});
     });
-  });
-
-</script>
+    </script>
 </head>
 <body>
-
-<button>Send an HTTP POST request to a page and get the result back</button>
-
+	<h1> jQuery post() 
+	</h1>
+	<input type="button" id="ajaxBtn" value="Send POST request" />
+	<p>
+	</p>
 </body>
 </html>
