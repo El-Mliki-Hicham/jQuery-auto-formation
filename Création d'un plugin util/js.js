@@ -1,15 +1,16 @@
-(function ( $ ) {
- 
-    $.fn.hello = function( options ) {
- 
-        // Default options
-        var settings = $.extend({
-            name: 'John Doe'
-        }, options );
- 
-        // Apply options
-        return this.append('Hello ' + settings.name + '!');
- 
+$(function() {
+    $.fn.fade = function() {  
+    
+    $(this).fadeIn()
+    return $(this); 
+            
     };
+})
+$$(function() {
+    $.fn.remove =  function(){
+
+        $(this).remove();
+        return $(this);
+    }
+})
  
-}( jQuery ));
